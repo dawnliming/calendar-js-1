@@ -49,11 +49,17 @@ function render(time){
         }
 
         const now = new Date()
+        let selectedLi
         for (let i = 1; i <= 月末几号; i++){
             const li = document.createElement('li')
             li.textContent = i.toString()
             if (i === now.getDate() && month === now.getMonth()+1 && year === now.getFullYear()){
                 li.classList.add('calendar-days-today')
+            }
+            li.onclick = ()=>{
+                if(selectedLi){selectedLi.classList.remove('calendar-days-selected')}
+                li.classList.add('calendar-days-selected')
+                selectedLi = li
             }
             days.append(li)
         }
