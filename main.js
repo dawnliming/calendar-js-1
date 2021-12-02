@@ -41,11 +41,14 @@ function render(time){
 
         const days = g('#days')
         days.innerHTML = ''
+        let n = 0
         for (let i = 1; i < 月初星期几; i++){
             const li = document.createElement('li')
             const d = new Date(月初 - 86400 * 1000 * i)
             li.textContent = d.getDate().toString()
             days.prepend(li)
+            li.classList.add('calendar-days-disabled')
+            n += 1
         }
 
         const now = new Date()
@@ -62,12 +65,14 @@ function render(time){
                 selectedLi = li
             }
             days.append(li)
+            n += 1
         }
 
-        for (let i = 1; 月末星期几 + i <= 7; i++){
+        for (let i = 1; n + i <= 42; i++){
             const li = document.createElement('li')
             li.textContent = i.toString()
             days.append(li)
+            li.classList.add('calendar-days-disabled')
         }
     }
 }

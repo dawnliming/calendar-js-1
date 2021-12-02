@@ -42,6 +42,9 @@
     border: 1px solid #fed32c;
     border-radius: 8px;
 }
+.calendar-days > li.calendar-days-disabled{
+    color: #999;
+}
 .calendar-days-today{
     background: #fed32c;
     border-radius: 8px;
