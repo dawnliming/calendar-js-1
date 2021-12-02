@@ -32,6 +32,10 @@
     display: flex;
     flex-wrap: wrap;
 }
+.calendar-days-today{
+    background: #fed32c;
+    border-radius: 8px;
+}
 .calendar-days > li {
     width: 14.2857%;
     text-align: center;
